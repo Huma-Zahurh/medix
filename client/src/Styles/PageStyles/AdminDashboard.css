@@ -1,0 +1,259 @@
+.BannerContainer{
+    background-image: url(../../Assets/banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    padding: 20px 20px 0px 20px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+.BannerVector img{
+    width: 60%;
+}
+.BannerText strong {
+    color: var(--linkSentence-color);
+}
+
+.userStatsBoxContainer{
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 15px;
+}
+.StatsBoxesContainer_4{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.statsBox{
+    border: 1.5px solid #e6e6e6;
+    border-radius: 15px;
+    padding: 10px 20px;
+}
+
+.statsBox2{
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    background-color: var(--heading-color);
+}
+
+.statsBox3{
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    background-color: var(--linkSentence-color);
+}
+.statsBoxNameNBtn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.statsBoxNameNBtn span{
+    font-family: var(--text-font);
+}
+.statsBox2 .statsBoxNameNBtn span, .statsBox3 .statsBoxNameNBtn span{
+    color: white;
+}
+.statsBox2 h6 , .statsBox2 h4 , .statsBox3 h6 , .statsBox3 h4{
+    color: white;
+}
+.statsBoxBtn{
+    padding: 5px 9px;
+    background-color: var(--linkSentence-color);
+    color: white;
+    border-radius: 50px;
+    border: none;
+    transition: background-color .5s ease-in-out;
+}
+.statsBoxBtn:hover{
+    background-color: var(--heading-color);
+    color: white;
+}
+.statsBox2Btn{
+    padding: 3px 7px;
+    background-color: var(--main-bg-color);
+    border: 2px solid transparent ;
+    border-radius: 50px;
+    transition: background-color .5s ease-in-out;
+}
+.statsBox2Btn:hover{
+    background-color: var(--heading-color);
+    color: white;
+    border: 2px solid var(--linkSentence-color) ;
+}
+
+.stats-img-1_Container{
+    width: 100%;
+}
+.stats-img-1_Container img {
+    width: 150px;
+}
+.statsBox4{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.stats-img-2_Container{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.stats-img-2_Container img{
+    width: 120px;
+}
+.statsBoxInner{
+    width: 100%;
+}
+
+
+.StatsBoxesContainer_1 {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.StatsBoxesContainer_2 {
+    width: 25%;
+}
+.StatsBoxesContainer_3 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.StatsBoxesContainer_4 .statsBox , .StatsBoxesContainer_4 .statsBox3 {
+    width: 100%;
+} 
+
+/* For screens below 880px */
+@media (max-width: 880px) {
+    .BannerContainer {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 10px;
+    }
+  .BannerVector{
+    display: none;
+  }
+  
+    .invoiceStatsBoxContainer {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .StatsBoxesContainer_1,
+    .StatsBoxesContainer_2,
+    .StatsBoxesContainer_3 {
+      width: 100%;
+    }
+  
+    .StatsBoxesContainer_3 {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .statsBox, .statsBox2, .statsBox3, .statsBox4 {
+      padding: 20px;
+    }
+  
+    .stats-img-1_Container ,
+    .stats-img-2_Container  {
+      display: none;
+    }
+  }
+  
+  /* For screens below 600px */
+  @media (max-width: 600px) {
+    .BannerContainer {
+      padding: 15px ;
+    }
+  
+    .invoiceStatsBoxContainer {
+      gap: 15px;
+    }
+  
+    .StatsBoxesContainer_4 {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .statsBox, .statsBox2, .statsBox3, .statsBox4 {
+      padding: 15px;
+      border-radius: 10px;
+    }
+  
+    .statsBoxNameNBtn span {
+      font-size: 14px;
+    }
+  
+    .statsBoxBtn, .statsBox2Btn {
+      padding: 3px 7px;
+    }
+  }
+  
+  /* For screens below 480px */
+  @media (max-width: 480px) {
+    .BannerContainer {
+      padding: 10px ;
+    }
+  
+    .BannerText p {
+      font-size: 14px;
+    }
+  
+    .BannerText h4 {
+      font-size: 18px;
+    }
+  
+    .invoiceStatsBoxContainer {
+      gap: 10px;
+    }
+  
+    .StatsBoxesContainer_1,
+    .StatsBoxesContainer_2,
+    .StatsBoxesContainer_3,
+    .StatsBoxesContainer_4 {
+      width: 100%;
+    }
+  
+    .statsBox, .statsBox2, .statsBox3, .statsBox4 {
+      padding: 8px;
+      border-radius: 8px;
+    }
+  
+    .statsBoxNameNBtn span {
+      font-size: 12px;
+    }
+  
+    .statsBoxBtn, .statsBox2Btn {
+      padding: 3px 7px;
+    }
+  }
+  
+  /* For screens below 360px */
+  @media (max-width: 360px) {
+    .BannerContainer {
+      padding: 10px;
+    }
+  
+    .BannerText p,
+    .BannerText h4 {
+      font-size: 12px;
+    }
+  
+    .statsBoxNameNBtn span {
+      font-size: 10px;
+    }
+  
+    .statsBoxBtn, .statsBox2Btn {
+      padding: 2px 6px;
+    }
+  }
+  

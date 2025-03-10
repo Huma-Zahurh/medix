@@ -1,0 +1,26 @@
+.subjectDropdown{
+    background-color: var(--inner-div-color);
+    margin-top: -20px;
+    padding: 15px 40px;
+    border-radius: 0 0px 20px 20px;
+    border: 1px solid #e0e0e0;
+    border-top: 0 !important;
+}
+
+.chapterNameContainer{
+    background-color: var(--main-div-color);
+    border: solid 1px #e0e0e0;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.ChapterDropdown{
+    background-color: var(--main-div-color);
+    margin-top: -20px;
+    padding: 15px 40px;
+    border-radius: 0 0px 20px 20px;
+    border: 1px solid #e0e0e0;
+    border-top: 0 !important;
+}
+

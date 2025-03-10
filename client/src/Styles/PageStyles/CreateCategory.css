@@ -1,0 +1,358 @@
+.InvoiceTopBtns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.InvoiceTopBtns button{
+    background-color: #f1f1f1;
+    color: #333;
+    font-size: var(--text-size);
+    padding: 5px 20px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+.InvoiceTopBtns button:hover, 
+.InvoiceTopBtns button:active {
+    background-color: #e4e4e4;
+}
+
+.leftBtns , .rightBtns{
+    background-color: #f1f1f1;
+    border: solid 1px #e0e0e0;
+    border-radius: 10px;
+}
+/* content Area */
+.contentArea{
+    background-color: #f1f1f1;
+    border: solid 1px #e0e0e0;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 20px;
+}
+.InvoiceTopDetails{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.rightDetails{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.FormFieldContainer label {
+    margin-right: 10px;
+}
+
+input , select , textarea{
+    border: solid 1px #2a2a2a;
+    outline: none;
+    padding: 6px;
+    border-radius: 8px;
+    margin-right: 8px;
+    font-family: var(--text-font);
+    font-size: var(--label-size);
+    color: var(--text-color);
+}
+.bwFormHeadings{
+    font-family: var(--sub-heading-font);
+    font-size: var(--sub-heading);
+    color: var(--heading-color);
+}
+.bwFormText{
+    font-family: var(--text-font);
+    color: var(--linkSentence-color);
+}
+.textFormContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0 20px 0;
+}
+
+.FormFieldContainer2{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+.FormFieldContainer2  {
+    margin-bottom: 15px;
+}
+.sameCustomerDetailsFormContainer, .differentCustomerDetailsFormContainer{
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ align-items: center;
+}
+.textFormContainer2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0 20px 0;
+}
+
+.ProductTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 0 0;
+    font-size: var(--text-size);
+    text-align: center;
+    background-color: #fafafa;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.ProductTable th, .ProductTable td {
+    padding: 10px 15px;
+}
+
+.ProductTable th, tfoot {
+    background-color: #ffffff;
+    border-bottom: 2px solid var(--heading-color);
+    font-weight: bold;
+    color: #333;
+}
+
+.ProductTable th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.ProductTable th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.ProductTable tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.ProductTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+.ProductTable td {
+    color: #333;
+}
+
+.ProductTable td:first-child, .ProductTable th:first-child {
+    border-left: none;
+}
+
+.ProductTable td:last-child, .ProductTable th:last-child {
+    border-right: none;
+}
+ .tfoot {
+    background-color: #ffffff;
+    border-radius: 0 0 12px 12px;
+    border-top: 2px solid var(--heading-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 15px 0 15px;
+    font-size: var(--label-size);
+}
+.ProductRemoveBtn{
+    background-color: var(--linkSentence-color);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.InvoiceTotalsText{
+    font-family: var(--text-font);
+    font-size: var(--text-size);
+    color: var(--heading-color);
+}
+.InvoiceTotalsContainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+}
+
+/* Preview tab  */
+.brandDetailsContainer{
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+.brandDetailsContainer img {
+    width: 50%;
+}
+.BrandTextContainer{
+    text-align: right;
+}
+.BrandTextContainer h4 {
+    font-size: var(--sub-heading);
+    margin-bottom: 20px;
+}
+.BrandTextContainer p {
+    margin-bottom: 0px;
+}
+.InvoiceCreationDetails{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border-top: solid 3px var(--linkSentence-color);
+    border-bottom: solid 3px var(--heading-color);
+    margin: 30px 0;
+    border-radius: 10px;
+}
+.InvoiceCreationDetails p {
+    margin-bottom: 0;
+}
+.CustomerTextContainer{
+    text-align: left;
+}
+.CustomerTextContainer2{
+    text-align: right;
+}
+.CustomerTextContainer h4 , .CustomerTextContainer2 h4{
+    font-size: var(--sub-heading);
+    font-family: var(--sub-heading-font);
+    color: black;
+}
+.CustomerTextContainer p, .CustomerTextContainer2 p{
+    margin-bottom: 5px;
+}
+
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  .popup-content h5 {
+    margin: 0 0 30px;
+  }
+  
+  .popup-content input {
+    margin: 0 0 30px;
+  }
+  
+  .close-popup-btn {
+    padding: 2px 8px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: solid 1px black;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+
+  /* ----------------------- */
+
+  .UserTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0px 0 0 0;
+    font-size: var(--text-size);
+    text-align: left;
+    background-color: #fafafa;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.UserTable th, .UserTable td {
+    padding: 10px 15px;
+}
+
+.UserTable th, tfoot {
+    background-color: #f1f1f1;
+    border-bottom: 2px solid var(--heading-color);
+    font-weight: bold;
+    color: #333;
+}
+
+.UserTable th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.UserTable th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.UserTable tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.UserTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+.UserTable td {
+    color: #333;
+}
+
+.UserTable td:first-child, .UserTable th:first-child {
+    border-left: none;
+}
+
+.UserTable td:last-child, .UserTable th:last-child {
+    border-right: none;
+}
+
+
+.UserTable .actions {
+    display: flex;
+    gap: 10px;
+}
+
+.UserTable .actions .actionBtn {
+    font-size: 18px;
+    color: #1a1919;
+}
+
+.actionTrashBtn {
+    font-size: 18px;
+    color: rgb(150, 4, 4);
+}
+.tfootcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f1f1f1;
+    border-top: 2px solid var(--heading-color);
+    font-weight: bold;
+    color: #333;
+    padding: 0px 15px;
+    border-radius: 0 0px 10px 10px;
+}
+
+.tablePagination {
+    display: flex;
+    align-items: center;
+}
+
+.tablePagination span {
+    background-color: #ffffff;
+    padding: 5px 15px;
+    margin: 15px;
+    border-radius: 5px;
+}
+.entriesPagination{
+    font-size: var(--text-size);
+    font-family: var(--text-font);
+    font-weight: 400;
+}
