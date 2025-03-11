@@ -30,7 +30,7 @@ const CategoryPage = () => {
     }, [slug]);
 
     if (!category) {
-        return <StudentLayout title="Loading...">Loading category data...</StudentLayout>;
+        return <StudentLayout title="Loading...">Loading...</StudentLayout>;
     }
 
     const toggleSubject = (subjectId) => {
@@ -61,10 +61,10 @@ const CategoryPage = () => {
                 {category.subjects && category.subjects.map((subject) => (
                     <div key={subject._id} className="mt-4">
                         <div
-                            className="contentArea d-flex justify-content-between align-items-center cursor-pointer"
+                            className="contentArea d-flex justify-content-between align-items-center pointer"
                             onClick={() => toggleSubject(subject._id)}
                         >
-                            <h5 className="TextBlue">{subject.name}</h5>
+                            <h5 className="TextBlue pointer">{subject.name}</h5>
                             <div className="d-flex align-items-center">
                                 <span className="me-2">
                                     {category.chapters?.filter(chapter => chapter.subject._id === subject._id).length || 0} Chapters
@@ -80,7 +80,7 @@ const CategoryPage = () => {
                                         className="chapterNameContainer d-flex justify-content-between align-items-center cursor-pointer"
                                         onClick={() => toggleChapter(chapter._id)}
                                     >
-                                        <h5>{chapter.name}</h5>
+                                        <h5 className="chapterName">{chapter.name}</h5>
                                         <div className="d-flex align-items-center">
                                             <span className="me-2">
                                                 {category.topics?.filter(topic => topic.chapter._id === chapter._id).length || 0} Topics
@@ -92,7 +92,7 @@ const CategoryPage = () => {
                                     <div className={`ChapterDropdown collapse ${openChapters[chapter._id] ? "show" : ""}`}>
                                         {category.topics?.filter(topic => topic.chapter._id === chapter._id).map((topic) => (
                                             <div key={topic._id} className="mt-2 ms-4 ">
-                                                <NavLink to={getTopicNavLink(topic)} className="NavLink">
+                                                <NavLink to={getTopicNavLink(topic)} className="NavLink pb-1">
                                                     <FaExternalLinkAlt className="navIcon" />&nbsp;&nbsp;
                                                     {topic.name}
                                                 </NavLink>

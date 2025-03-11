@@ -105,12 +105,12 @@ const StudentLayout = ({ children, title }) => {
                 />
                 {userDropdownVisible && (
                   <div className="UserDropdown">
-                    <h4>Hi! </h4>
-                    <p>Welcome Back</p>
+                    <h4>Hi! {auth.user?.name} </h4>
+                    <p>Welcome</p>
                     <hr />
                     <div>
-                    <Link to="/settings" className="DropdownLink">Settings</Link>
-                    <Link to="/support" className="DropdownLink">Support</Link>
+                    <Link to="/student/profile-settings" className="DropdownLink">Settings</Link>
+                    {/* <Link to="/support" className="DropdownLink">Support</Link> */}
                     <Link onClick={handleLogout}
                           to="/" className="DropdownLink">Logout</Link>
                     </div>

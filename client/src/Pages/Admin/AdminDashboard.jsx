@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState, useEffect} from 'react'
 import Layout from '../../Components/Layout'
 import '../../Styles/PageStyles/AdminDashboard.css'
 import { FaArrowRight } from "react-icons/fa";
@@ -7,10 +7,25 @@ import { TbCalendarDue } from "react-icons/tb";
 import { FaFileInvoice } from "react-icons/fa6";
 import { MdOutlinePendingActions } from "react-icons/md";
 import { FaBox, FaUsers } from 'react-icons/fa';
-import bannerVector from '../../Assets/home-slider.png'
 import vector2 from '../../Assets/object.png'
+import axios from 'axios';
 
 const AdminDashboard = () => {
+
+  const [bannerUrl, setBannerUrl] = useState(null);
+
+    useEffect(() => {
+        const fetchBanner = async () => {
+            try {
+                const response = await axios.get('http://localhost:5000/api/v1/banner/get');
+                setBannerUrl(response.data.imageUrl);
+            } catch (error) {
+                console.error('Fetch Banner Error:', error);
+            }
+        };
+        fetchBanner();
+    }, []);
+
   return (
     <Layout title={"Dashboard"}>
       
@@ -18,17 +33,7 @@ const AdminDashboard = () => {
 
         {/* Banner */}
         <div className='BannerContainer'>
-          {/* Banner Text */}
-          <div className='BannerText'>
-            <p><strong>Welcome To Medix Prep</strong></p>
-            <h4>Unlock the full potential of your Success</h4>
-            <p>Your streamlined solution for preparing for Exams all in one place.</p>
-          </div>
-          {/* Banner Vector */}
-          <div className='BannerVector'>
-            <img src={bannerVector} alt='Banner-Vector' />
-          </div>
-
+         {bannerUrl && <img src={bannerUrl} alt="Dashboard Banner" style={{ width: '100%' }} />}
         </div>
 
         {/*  Stats */}

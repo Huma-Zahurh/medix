@@ -25,6 +25,9 @@ import MySubscriptions from './Pages/Student/MySubscription';
 import CategoryPage from './Pages/Student/CategoryPage';
 import TopicMCQs from './Pages/Student/TopicMCQs';
 import TopicStudyMaterial from './Pages/Student/TopicStudyMaterial';
+import StudentProfileSettings from './Pages/Student/StudentProfileSettings';
+import BannerUpload from './Pages/Admin/BannerUpload';
+import BulkImport from './Pages/Admin/BulkImport';
 
 
 function App() {
@@ -46,6 +49,8 @@ function App() {
       <Route path="manage-subscription" element={<ManageSubscriptions />} />
       <Route path="profile-settings" element={<AdminProfileSetting />} />
       <Route path="manage-students" element={<ManageStudents />} />
+      <Route path="banner-upload" element={<BannerUpload />} />
+      <Route path="bulk-import" element={<BulkImport />} />
       </Route>
 
       <Route path="/student" element={<PrivateRoute />}>
@@ -55,6 +60,7 @@ function App() {
       <Route path="q-bank/:slug" element={<CategoryPage />} />
       <Route path="topic/mcqs/:slug" element={<TopicMCQs />} />
       <Route path="topic/study-material/:slug" element={<TopicStudyMaterial />} />
+      <Route path="profile-settings" element={<StudentProfileSettings />} />
       </Route>
 
       <Route path="*" element={<PageNotFound />} />

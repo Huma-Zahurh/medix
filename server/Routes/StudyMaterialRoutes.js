@@ -1,5 +1,4 @@
 const express = require("express");
-const multer = require("multer");
 const { requireSingIn, isAdmin } = require("../Middlewares/AuthMiddlewares");
 const {
     createStudyMaterial,
@@ -8,12 +7,12 @@ const {
     updateMaterial,
     deleteStudyMaterial 
 } = require("../Controllers/StudyMaterialControllers");
-const upload = require("../Middlewares/Multer");
+const {studyMaterialUpload} = require("../Middlewares/Multer");
 
 const route = express.Router();
 
 // Creating Material 
-route.post("/create-material", requireSingIn, isAdmin, upload.single("file"), createStudyMaterial);
+route.post("/create-material", requireSingIn, isAdmin, studyMaterialUpload.single("file"), createStudyMaterial);
 
 // Get all study materials 
 route.get("/get-study-material", getAllStudyMaterials);
@@ -22,7 +21,7 @@ route.get("/get-study-material", getAllStudyMaterials);
 route.get("/single-material/:id", getMaterialById);
 
 //  Update Study Material
-route.put("/update-material/:id", requireSingIn, isAdmin , upload.single('file') , updateMaterial);
+route.put("/update-material/:id", requireSingIn, isAdmin , studyMaterialUpload.single('file') , updateMaterial);
 
 // Delete Material
 route.delete("/delete-material/:id",  requireSingIn, isAdmin, deleteStudyMaterial); 

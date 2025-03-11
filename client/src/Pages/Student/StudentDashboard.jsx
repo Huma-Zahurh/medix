@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState, useEffect} from 'react'
 import '../../Styles/PageStyles/AdminDashboard.css'
 import { FaArrowRight } from "react-icons/fa";
 import { BsCurrencyDollar } from "react-icons/bs";
@@ -9,8 +9,24 @@ import { FaBox, FaUsers } from 'react-icons/fa';
 import bannerVector from '../../Assets/home-slider.png'
 import vector2 from '../../Assets/object.png'
 import StudentLayout from '../../Components/StudentLayout';
+import axios from 'axios';
 
 const StudentDashboard = () => {
+
+  const [bannerUrl, setBannerUrl] = useState(null);
+
+  useEffect(() => {
+      const fetchBanner = async () => {
+          try {
+              const response = await axios.get('http://localhost:5000/api/v1/banner/get');
+              setBannerUrl(response.data.imageUrl);
+          } catch (error) {
+              console.error('Fetch Banner Error:', error);
+          }
+      };
+      fetchBanner();
+  }, []);
+
   return (
     <StudentLayout title={"Dashboard"}>
       
@@ -18,17 +34,7 @@ const StudentDashboard = () => {
       
               {/* Banner */}
               <div className='BannerContainer'>
-                {/* Banner Text */}
-                <div className='BannerText'>
-                  <p><strong>Welcome To Medix Prep</strong></p>
-                  <h4>Unlock the full potential of your Success</h4>
-                  <p>Your streamlined solution for preparing for Exams all in one place.</p>
-                </div>
-                {/* Banner Vector */}
-                <div className='BannerVector'>
-                  <img src={bannerVector} alt='Banner-Vector' />
-                </div>
-      
+              {bannerUrl && <img src={bannerUrl} alt="Dashboard Banner" style={{ width: '100%' }} />}
               </div>
       
               {/*  Stats */}
@@ -42,8 +48,8 @@ const StudentDashboard = () => {
                       <h4><BsCurrencyDollar /></h4>
                       <h6 className='subHeading'>250</h6>
                       <div className='statsBoxNameNBtn'>
-                        <span>Past Papers</span>
-                        <button className='statsBoxBtn'><FaArrowRight /></button>
+                        <span>Total Subjects</span>
+                        {/* <button className='statsBoxBtn'><FaArrowRight /></button> */}
                       </div>
                     </div>
       
@@ -51,8 +57,8 @@ const StudentDashboard = () => {
                       <h4><TbCalendarDue /></h4>
                       <h6 className='subHeading'>5</h6>
                       <div className='statsBoxNameNBtn'>
-                        <span>Sessions</span>
-                        <button className='statsBox2Btn'><FaArrowRight /></button>
+                        <span>Total Chapters</span>
+                        {/* <button className='statsBox2Btn'><FaArrowRight /></button> */}
                       </div>
                     </div>
       
@@ -65,7 +71,7 @@ const StudentDashboard = () => {
                       <h6 className='subHeading'>200</h6>
                       <div className='statsBoxNameNBtn'>
                         <span>Study Material</span>
-                        <button className='statsBoxBtn'><FaArrowRight /></button>
+                        {/* <button className='statsBoxBtn'><FaArrowRight /></button> */}
                       </div>
                       <div className='stats-img-1_Container'>
                       <img src={vector2} alt='Inovice_Stats'  className='stats-img-1'/>
@@ -82,7 +88,7 @@ const StudentDashboard = () => {
                         <h4 className='subHeading'>5</h4>
                         <div className='statsBoxNameNBtn'>
                           <span>Pending Quiz</span>
-                          <button className='statsBox2Btn'><FaArrowRight /></button>
+                          {/* <button className='statsBox2Btn'><FaArrowRight /></button> */}
                         </div>
                       </div>
       
@@ -91,7 +97,7 @@ const StudentDashboard = () => {
                       <h6 className='subHeading'>500</h6>
                       <div className='statsBoxNameNBtn'>
                         <span>Total MCQ's</span>
-                        <button className='statsBoxBtn'><FaArrowRight /></button>
+                        {/* <button className='statsBoxBtn'><FaArrowRight /></button> */}
                       </div>
                     </div>
       
@@ -103,7 +109,7 @@ const StudentDashboard = () => {
                       <h6 className='subHeading'>300</h6>
                       <div className='statsBoxNameNBtn'>
                         <span>Practice Questions</span>
-                        <button className='statsBoxBtn'><FaArrowRight /></button>
+                        {/* <button className='statsBoxBtn'><FaArrowRight /></button> */}
                       </div>
                       </div>
                       <div className='stats-img-2_Container'>
@@ -118,7 +124,7 @@ const StudentDashboard = () => {
               </div>
       
               {/* Streaks */}
-              <div className='contentArea'>
+              {/* <div className='contentArea'>
               <h4 className='subHeading'>Streaks</h4>
               <span>March 2025</span>
                 <div className='streakscontainer'>
@@ -154,7 +160,7 @@ const StudentDashboard = () => {
                   <div className='streak'></div>
                   <div className='streak'></div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
     </StudentLayout>

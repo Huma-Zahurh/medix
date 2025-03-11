@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import "../Styles/StudentMenu.css";
 import { FaChevronDown, FaUserEdit, FaHome, FaFileInvoice, FaUsers, FaUserCog, FaBriefcase } from "react-icons/fa";
 import { FaUserPlus, FaUsersGear } from "react-icons/fa6";
-// import { ImProfile } from "react-icons/im";
 import { MdOutlineAssessment } from "react-icons/md";
 import { IoSettingsOutline } from "react-icons/io5";
 import Logo from "../Assets/Logo.jpg";
@@ -13,18 +12,17 @@ import axios from "axios";
 
 const StudentMenu = () => {
     const [openMenu, setOpenMenu] = useState(null);
+    const menuRef = useRef(null);
     const [auth] = useContext(AuthContext);
     const userId = auth?.user?._id;
     const [categories, setCategories] = useState([]);
     const [allCategories, setAllCategories] = useState([]);
-
 
     const fetchUserAndCategories = async () => {
         try {
             const userResponse = await axios.get(`http://localhost:5000/api/v1/auth/user/${userId}`);
             const userData = userResponse.data.user;
 
-            // Directly extract category IDs from the user's subscription
             if (userData.subscriptions[0].subscriptionId.categories) {
                 const activeCategoryIds = userData.subscriptions[0].subscriptionId.categories;
 
@@ -54,7 +52,7 @@ const StudentMenu = () => {
     };
 
     return (
-        <div className="userMenu">
+        <div className="userMenu" ref={menuRef}>
             <NavLink to={"/"} className="logoContainer NavLink">
                 <img src={Logo} alt="Logo" className="logo" />
                 <div className="LogoText">
@@ -79,9 +77,8 @@ const StudentMenu = () => {
                     <FaChevronDown className="dropdownIcon" />
                 </div>
 
-
                 {openMenu === 'Q-Bank' && (
-                    <div className="subMenu">
+                    <div className={`subMenu popup-submenu ${openMenu === 'Q-Bank' ? 'show' : ''}`}>
                         {categories.map(category =>
                             <NavLink
                                 key={category._id}
@@ -104,7 +101,7 @@ const StudentMenu = () => {
                 </div>
 
                 {openMenu === "Subscriptions" && (
-                    <div className="subMenu">
+                    <div className={`subMenu popup-submenu ${openMenu === 'Subscriptions' ? 'show' : ''}`}>
                         <NavLink to={"/student/subscription-plans"} className="NavLink subItem d-flex align-items-center">
                             <FaUserPlus className="navIcon" />
                             <span className="px-2"> Subscription Plans</span>
@@ -125,7 +122,7 @@ const StudentMenu = () => {
                 </div>
 
                 {openMenu === "Users" && (
-                    <div className="subMenu">
+                    <div className={`subMenu popup-submenu ${openMenu === 'Users' ? 'show' : ''}`}>
                         <div className="subItem d-flex align-items-center">
                             <FaUserEdit className="navIcon" />
                             <span className="px-2"> My Progress</span>
@@ -146,15 +143,11 @@ const StudentMenu = () => {
                 </div>
 
                 {openMenu === "Settings" && (
-                    <div className="subMenu">
-                        <div className="subItem d-flex align-items-center">
+                    <div className={`subMenu popup-submenu ${openMenu === 'Settings' ? 'show' : ''}`}>
+                        <NavLink to={"/student/profile-settings"} className="NavLink subItem d-flex align-items-center">
                             <IoSettingsOutline className="navIcon" />
                             <span className="px-2"> Profile Settings</span>
-                        </div>
-                        {/* <div className="subItem d-flex align-items-center">
-                            <ImProfile className="navIcon" />
-                            <span className="px-2"> Subscription Settings</span>
-                        </div> */}
+                        </NavLink>
                     </div>
                 )}
             </nav>

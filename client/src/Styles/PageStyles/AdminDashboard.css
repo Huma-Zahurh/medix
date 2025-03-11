@@ -1,13 +1,7 @@
-.BannerContainer{
-    background-image: url(../../Assets/banner.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 20px;
-    padding: 20px 20px 0px 20px ;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
+
+.BannerContainer img{
+  border-radius: 20px;
+  width: 100%;
 }
 .BannerVector img{
     width: 60%;

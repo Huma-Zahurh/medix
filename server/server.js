@@ -11,6 +11,9 @@ const McqRoutes = require("./Routes/McqRoutes");
 const StudyMaterialRoutes = require("./Routes/StudyMaterialRoutes");
 const CategoryRoutes = require("./Routes/CategoryRoutes");
 const SubscriptionRoutes = require("./Routes/SubscriptionRoutes");
+const path = require('path');
+const BannerRoutes = require("./Routes/BannerRoutes")
+const BulkImportRoutes = require('./Routes/BulkImportRoutes')
  require('./Utils/SubscriptionExpiration');
 
 // database config
@@ -23,6 +26,15 @@ const app = express();
 //midwares
 app.use(express.json());
 app.use(cors());
+app.use(cors({
+  origin: "*",  
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true
+}));
+
+
+// Serve static files from the 'uploads' directory
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 //routes
 app.use("/api/v1/auth", authRoutes);
@@ -33,6 +45,8 @@ app.use("/api/v1/mcqs", McqRoutes);
 app.use("/api/v1/material", StudyMaterialRoutes);
 app.use("/api/v1/category", CategoryRoutes);
 app.use("/api/v1/subscription", SubscriptionRoutes);
+app.use('/api/v1/banner', BannerRoutes);
+app.use('/api/v1/bulk-import', BulkImportRoutes);
 
 //rest api
 app.get("/", (req, res) => {

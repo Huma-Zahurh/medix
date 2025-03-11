@@ -6,7 +6,7 @@ import { FaUserPlus, FaUsersGear } from "react-icons/fa6";
 import { BiSolidCategoryAlt } from "react-icons/bi";
 import { FaBook } from "react-icons/fa6";
 import { FaRegNoteSticky } from "react-icons/fa6";
-// import { MdOutlineAssessment } from "react-icons/md";
+import { MdOutlineAssessment } from "react-icons/md";
 import { BsNewspaper } from "react-icons/bs";
 import { LuSettings2 } from "react-icons/lu";
 import { MdOutlineTopic } from "react-icons/md";
@@ -77,10 +77,10 @@ const AdminMenu = () => {
                             <FaRegNoteSticky className="navIcon" />
                             <span className='px-2'> Study Material</span>
                         </NavLink>   
-                        {/* <div className=' subItem d-flex align-items-center'>
-                            <MdOutlineAssessment className="navIcon" />
-                            <span className='px-2'> Assessments</span>
-                        </div>               */}
+                        <NavLink to={"/admin/bulk-import"} className='NavLink subItem d-flex align-items-center'>
+                            <BsNewspaper className="navIcon" />
+                            <span className='px-2'> Bulk Import</span>
+                        </NavLink>       
                     </div>
                 )}
 
@@ -145,10 +145,10 @@ const AdminMenu = () => {
                             <IoSettingsOutline  className="navIcon" />
                             <span className='px-2'> Profile Settings</span>
                         </NavLink>
-                        {/* <div className=' subItem d-flex align-items-center'>
-                            <ImProfile className="navIcon" />
-                            <span className='px-2'> Subscription Settings</span>
-                        </div> */}
+                         <NavLink to={"/admin/banner-upload"} className='NavLink subItem d-flex align-items-center'>
+                            <MdOutlineAssessment className="navIcon" />
+                            <span className='px-2'> Banner Settings</span>
+                        </NavLink>              
 
                     </div>
                 )}

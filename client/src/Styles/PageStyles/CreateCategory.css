@@ -356,3 +356,15 @@ input , select , textarea{
     font-family: var(--text-font);
     font-weight: 400;
 }
+.subscriptionName{
+    font-family: var(--sub-heading-font);
+    font-weight: 400;
+    background-color: #fff;
+    padding: 8px 0;
+    border-radius: 20px;
+    font-size: var( --navlinks-size);
+}
+.SubscriptionPrice{
+    font-size: var(--heading-size);
+    color: var(--linkSentence-color);
+}

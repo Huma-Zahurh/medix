@@ -5,6 +5,7 @@
     border-radius: 0 0px 20px 20px;
     border: 1px solid #e0e0e0;
     border-top: 0 !important;
+    cursor: pointer;
 }
 
 .chapterNameContainer{
@@ -13,6 +14,7 @@
     border-radius: 20px;
     padding: 20px;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .ChapterDropdown{
@@ -22,5 +24,37 @@
     border-radius: 0 0px 20px 20px;
     border: 1px solid #e0e0e0;
     border-top: 0 !important;
+    cursor: pointer;
 }
 
+.pointer{
+    cursor: pointer;
+}
+.chapterName{
+    font-size: 18px;
+    color: var( --heading-color);
+}
+
+@media (max-width: 400px) {
+    .TextBlue{
+        font-size: 15px;
+    }
+
+    .subjectDropdown{
+        margin-top: -20px;
+        padding: 5px 10px;
+        border-radius: 0 0px 20px 20px;
+    }
+
+    .ChapterDropdown{
+        margin-top: -20px;
+        padding: 5px 10px;
+        border-radius: 0 0px 20px 20px;
+    }
+    .contentArea,
+    .chapterNameContainer,
+    .NavLink {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

@@ -86,7 +86,12 @@ const getAllTopicsController = async (req, res) => {
         path: "mcqs", 
         model: "MCQ",
         select: "questionText options answer explanation", 
-    });
+    })
+    .populate({
+      path: "studyMaterial", 
+      model: "StudyMaterial",
+      select: "title description subject chapter topic file_url", 
+  });
 
     res.status(200).json({
       success: true,

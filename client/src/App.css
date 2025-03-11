@@ -301,6 +301,10 @@ form .btn {
 }
 .TextBlue{
   font-family: var(--text-font);
-  font-size: var(--sub-heading);
+  font-size: 20px;
   color: var(--linkSentence-color);
+}
+.indexNum{
+  font-size: var(--text-size);
+  color: var(--heading-color);
 }
